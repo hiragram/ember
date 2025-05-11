@@ -72,7 +72,7 @@ export default function Home({ initialUsers, homeDescription }: { initialUsers: 
       try {
         setInitialLoading(true);
         setError(null);
-        const response = await fetch(`/api/articles?page=1&perPage=${perPage}`);
+        const response = await fetch(`/api/articles?page=1&perPage=${perPage}&duringEmploymentOnly=true`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch articles');
@@ -102,7 +102,7 @@ export default function Home({ initialUsers, homeDescription }: { initialUsers: 
       try {
         setIsLoading(true);
         setError(null);
-        const response = await fetch(`/api/articles?page=${currentPage}&perPage=${perPage}`);
+        const response = await fetch(`/api/articles?page=${currentPage}&perPage=${perPage}&duringEmploymentOnly=true`);
         
         if (!response.ok) {
           throw new Error('Failed to fetch more articles');

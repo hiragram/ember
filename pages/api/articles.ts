@@ -102,7 +102,8 @@ async function getAllArticles() {
                   tags: user.tags,
                   siteName: parsedFeed.title || 'Unknown Source',
                   author: user.name,
-                  authorAvatar: user.avatar
+                  authorAvatar: user.avatar,
+                  isDuringEmployment: true
                 });
               }
             });
@@ -159,11 +160,11 @@ export default async function handler(
     // Apply filters if provided
     if (authorFilter) {
       articles = articles.filter(article => article.author === authorFilter);
-      
-      // If duringEmploymentOnly is true, filter articles by employment flag
-      if (duringEmploymentOnly) {
-        articles = articles.filter(article => article.isDuringEmployment === true);
-      }
+    }
+    
+    // If duringEmploymentOnly is true, filter articles by employment flag
+    if (duringEmploymentOnly) {
+      articles = articles.filter(article => article.isDuringEmployment === true);
     }
     
     if (tagFilter) {
