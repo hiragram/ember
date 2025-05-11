@@ -1,0 +1,22 @@
+users:
+  - name: hiragram
+    full_name_ja: 平山 裕也
+    full_name_en: Yuya Hirayama
+    description: |-
+      開発者体験おじさん。父。Swiftとスイフトスポーツ。
+      猫。MT車。AI。
+    avatar: "/avatars/hiragram.png"
+    joined:
+      year: 2024
+      month: 2
+    left_at: null
+    tags:
+      - Engineer
+      - iOS
+      - DX
+    accounts:
+      x: hiragram
+    sources:
+      - https://hiragram.app/feed
+      - https://zenn.dev/hiragram/feed?all=1
+      - https://speakerdeck.com/hiragram.rss
