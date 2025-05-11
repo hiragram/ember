@@ -260,7 +260,7 @@ export default function UserPage({ initialUser }: { initialUser: User }) {
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold text-gray-200 flex items-center">
-              <span className="mr-2">📝</span>Recent Articles
+              <span className="mr-2">📝</span>記事
             </h2>
           </div>
           
@@ -331,15 +331,13 @@ export default function UserPage({ initialUser }: { initialUser: User }) {
             
             {!hasMore && articles.length > 0 && (
               <div className="text-center py-8 text-gray-400">
-                <p>No more articles to load</p>
+                <p>最後まで読み込みました</p>
               </div>
             )}
           </>
         ) : (
           <div className="text-center py-12 text-gray-400">
-            <p>{showOnlyDuringEmployment 
-              ? "No articles found within the employment period." 
-              : "No articles found for this user."}</p>
+            <p>記事がありません</p>
           </div>
         )}
       </main>

@@ -39,7 +39,7 @@ interface UsersApiResponse {
   users: User[];
 }
 
-export default function Home({ initialUsers }: { initialUsers: User[] }) {
+export default function Home({ initialUsers, homeDescription }: { initialUsers: User[], homeDescription: string }) {
   const [articles, setArticles] = useState<RSSItem[]>([]);
   const [users, setUsers] = useState<User[]>(initialUsers);
   const [currentPage, setCurrentPage] = useState(1);
@@ -135,12 +135,12 @@ export default function Home({ initialUsers }: { initialUsers: User[] }) {
           <span className="text-5xl font-bold mr-3 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">🔥</span>
           <h1 className={`${pressStart2P.className} text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-600 dark:from-amber-400 dark:to-red-500 group-hover:scale-105 transition-all duration-500`}>EMBER</h1>
         </div>
-        <p className="text-center text-gray-400 mt-2 max-w-2xl mx-auto">最新の記事をタイムライン形式で表示します</p>
+        <p className="text-center text-gray-400 mt-2 max-w-2xl mx-auto">{homeDescription}</p>
       </div>
       
       <main className="container mx-auto px-4 pb-16 max-w-[1200px]">
         <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-6 text-gray-200 flex items-center"><span className="mr-2">👥</span>Members</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-200 flex items-center"><span className="mr-2">👥</span>参加者</h2>
           <div className="flex flex-wrap justify-center gap-6">
             {users.map((user) => (
               <Link 
@@ -165,7 +165,7 @@ export default function Home({ initialUsers }: { initialUsers: User[] }) {
         
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-200 flex items-center">
-            <span className="mr-2">📝</span>Recent Articles
+            <span className="mr-2">📝</span>最近の記事
           </h2>
         </div>
         
@@ -208,7 +208,7 @@ export default function Home({ initialUsers }: { initialUsers: User[] }) {
             
             {!hasMore && articles.length > 0 && (
               <div className="text-center py-8 text-gray-400">
-                <p>No more articles to load</p>
+                <p>最後まで読み込みました</p>
               </div>
             )}
           </>
@@ -274,14 +274,16 @@ export async function getStaticProps() {
     
     return {
       props: {
-        initialUsers: activeUsers
+        initialUsers: activeUsers,
+        homeDescription: config.home?.description || ''
       },
     };
   } catch (error) {
     console.error('Build time error:', error);
     return {
       props: {
-        initialUsers: []
+        initialUsers: [],
+        homeDescription: ''
       },
     };
   }

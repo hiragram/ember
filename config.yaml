@@ -1,3 +1,5 @@
+home:
+  description: Emberは複数のRSSフィードをまとめて記事をタイムライン形式で表示します
 users:
   - name: hiragram
     full_name_ja: 平山 裕也
@@ -20,3 +22,4 @@ users:
       - https://hiragram.app/feed
       - https://zenn.dev/hiragram/feed?all=1
       - https://speakerdeck.com/hiragram.rss
+  

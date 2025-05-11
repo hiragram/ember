@@ -127,7 +127,7 @@ export default function TagPage({ users, tag }: { users: User[], tag: string }) 
       
       <div className="container mx-auto pt-10 pb-6 px-4 max-w-[1200px]">
         <h1 className="text-3xl font-bold text-center text-white mt-4">
-          タグ: <span className={`${pressStart2P.className} bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-red-600 dark:from-amber-400 dark:to-red-500 text-sm`}>{tag}</span>
+          {tag}
         </h1>
         <p className="text-center text-gray-400 mt-2 max-w-2xl mx-auto">
           このタグを持つメンバー
@@ -136,7 +136,6 @@ export default function TagPage({ users, tag }: { users: User[], tag: string }) 
       
       <main className="container mx-auto px-4 pb-16 max-w-[1200px]">
         <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-6 text-gray-200 flex items-center"><span className="mr-2">👥</span>Members</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {users.map((user) => (
               <Link 
@@ -197,7 +196,7 @@ export default function TagPage({ users, tag }: { users: User[], tag: string }) 
         <section>
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-200 flex items-center">
-              <span className="mr-2">📝</span>Articles with tag: {tag}
+              <span className="mr-2">📝</span>"{tag}"がつくメンバーの記事
             </h2>
           </div>
           
@@ -240,13 +239,13 @@ export default function TagPage({ users, tag }: { users: User[], tag: string }) 
               
               {!hasMore && articles.length > 0 && (
                 <div className="text-center py-8 text-gray-400">
-                  <p>No more articles to load</p>
+                  <p>最後まで読み込みました</p>
                 </div>
               )}
             </>
           ) : (
             <div className="text-center py-12 text-gray-400">
-              <p>No articles found with this tag.</p>
+              <p>記事がありません</p>
             </div>
           )}
         </section>
