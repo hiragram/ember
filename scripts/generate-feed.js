@@ -39,7 +39,7 @@ async function generateFeedJson() {
     
     for (const user of config.users) {
       // Determine user's active period
-      const joinDate = new Date(user.joined.year, user.joined.month - 1, 1); // Month is 0-indexed in JS Date
+      const joinDate = user.joined_at ? new Date(user.joined_at.year, user.joined_at.month - 1, 1) : new Date(0, 0, 1); // Month is 0-indexed in JS Date
       const leftDate = user.left_at ? new Date(user.left_at.year, user.left_at.month - 1, 1) : new Date(9999, 11, 31); // Far future date if still active
       
       // Process sources in parallel for better performance

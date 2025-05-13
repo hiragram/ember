@@ -29,7 +29,7 @@ interface User {
   full_name_en?: string;
   description?: string;
   avatar?: string;
-  joined?: {
+  joined_at?: {
     year: number;
     month: number;
   };
@@ -226,12 +226,12 @@ export default function UserPage({ initialUser }: { initialUser: User }) {
               </div>
             )}
             
-            {user.joined && (
+            {user.joined_at && (
               <div className="mt-1">
                 <p className="text-sm text-gray-500">
                   {user.left_at ? 
-                    `${user.joined.year}/${user.joined.month.toString().padStart(2, '0')}~${user.left_at.year}/${user.left_at.month.toString().padStart(2, '0')}` :
-                    `${user.joined.year}/${user.joined.month.toString().padStart(2, '0')}~`
+                    `${user.joined_at.year}/${user.joined_at.month.toString().padStart(2, '0')}~${user.left_at.year}/${user.left_at.month.toString().padStart(2, '0')}` :
+                    `${user.joined_at.year}/${user.joined_at.month.toString().padStart(2, '0')}~`
                   }
                 </p>
               </div>
@@ -299,7 +299,7 @@ export default function UserPage({ initialUser }: { initialUser: User }) {
             </h2>
           </div>
           
-          {user.joined && (
+          {user.joined_at && (
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-400">在籍中の記事のみ</span>
               <button 

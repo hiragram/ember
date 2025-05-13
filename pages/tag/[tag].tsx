@@ -27,7 +27,7 @@ interface User {
   full_name_en?: string;
   description?: string;
   avatar?: string;
-  joined?: {
+  joined_at?: {
     year: number;
     month: number;
   };

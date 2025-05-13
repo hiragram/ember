@@ -15,7 +15,7 @@ interface User {
   full_name_en?: string;
   description?: string;
   avatar?: string;
-  joined?: DateYearMonth;
+  joined_at?: DateYearMonth;
   left_at?: DateYearMonth | null;
   tags: string[];
   accounts?: UserAccount;
