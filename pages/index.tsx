@@ -152,7 +152,7 @@ export default function Home({ initialUsers, homeDescription }: { initialUsers: 
       
       <main className="container mx-auto px-4 pb-16 max-w-[1200px]">
         <section className="mb-10">
-          <h2 className="text-2xl font-bold mb-6 text-gray-200 flex items-center"><span className="mr-2">👥</span>参加者</h2>
+          <h2 className="text-2xl font-bold mb-6 text-gray-200 flex items-center"><span className="mr-2">👥</span>ソース</h2>
           <div className="flex flex-wrap justify-center gap-6">
             {users.map((user) => (
               <Link 
