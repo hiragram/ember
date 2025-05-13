@@ -24,6 +24,9 @@ interface User {
 
 interface ConfigYaml {
   users: User[];
+  home?: {
+    description?: string;
+  };
 }
 
 declare module 'js-yaml' {

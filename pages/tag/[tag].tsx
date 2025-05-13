@@ -9,6 +9,41 @@ import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
 
+interface RSSItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  contentSnippet: string;
+  tags: string[];
+  siteName: string;
+  author: string;
+  authorAvatar?: string;
+  isDuringEmployment?: boolean;
+}
+
+interface User {
+  name: string;
+  full_name_ja?: string;
+  full_name_en?: string;
+  description?: string;
+  avatar?: string;
+  joined?: {
+    year: number;
+    month: number;
+  };
+  left_at?: {
+    year: number;
+    month: number;
+  } | null;
+  tags: string[];
+  accounts?: {
+    x?: string;
+    github?: string;
+    speakerdeck?: string;
+  };
+  sources: string[];
+}
+
 const pressStart2P = Press_Start_2P({
   weight: ['400'],
   subsets: ['latin'],

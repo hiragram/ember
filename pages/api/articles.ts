@@ -66,12 +66,7 @@ async function getAllArticles() {
     // ビルド時に必ずfeed.jsonが生成されることを前提としている
     // 開発環境やテスト時のためのフォールバックコードとして残している
     
-    const parser = new Parser({
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; Ember Feed Aggregator; +https://github.com/yourorg/ember)'
-      },
-      timeout: 30000 // 30秒タイムアウト（APIではより短くする）
-    });
+    const parser = new Parser();
     const yamlPath = path.join(process.cwd(), 'config.yaml');
     const fileContents = fs.readFileSync(yamlPath, 'utf8');
     const config = yaml.load(fileContents) as any;
@@ -156,6 +151,11 @@ export default async function handler(
     
     // Get all articles
     let articles = await getAllArticles();
+    
+    // Ensure articles is an array
+    if (!articles) {
+      articles = [];
+    }
     
     // Apply filters if provided
     if (authorFilter) {

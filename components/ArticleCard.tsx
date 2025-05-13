@@ -1,6 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface RSSItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  contentSnippet: string;
+  tags: string[];
+  siteName: string;
+  author: string;
+  authorAvatar?: string;
+  isDuringEmployment?: boolean;
+}
+
 type ArticleCardProps = {
   article: RSSItem;
 };

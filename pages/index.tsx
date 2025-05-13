@@ -9,6 +9,18 @@ import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
 
+interface RSSItem {
+  title: string;
+  link: string;
+  pubDate: string;
+  contentSnippet: string;
+  tags: string[];
+  siteName: string;
+  author: string;
+  authorAvatar?: string;
+  isDuringEmployment?: boolean;
+}
+
 const pressStart2P = Press_Start_2P({
   weight: ['400'],
   subsets: ['latin'],

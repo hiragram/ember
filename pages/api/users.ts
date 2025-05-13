@@ -105,6 +105,12 @@ export default function handler(
     // すべてのユーザーを取得
     const users = getAllUsers();
     
+    // Ensure users is an array
+    if (!users) {
+      res.status(200).json({ users: [] });
+      return;
+    }
+    
     if (userName) {
       // 特定のユーザーのデータを返す
       const user = users.find(u => u.name === userName) || null;
