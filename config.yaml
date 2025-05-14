@@ -60,7 +60,7 @@ users:
       year: 2025
       month: 5
     left_at: null
-    tag:
+    tags:
       - Individual
     sources:
       - http://www.songmu.jp/riji/atom.xml
@@ -69,7 +69,7 @@ users:
       year: 2025
       month: 5
     left_at: null
-    tag:
+    tags:
       - Individual
     sources:
       - http://konifar-zatsu.hatenadiary.jp/rss
@@ -79,25 +79,25 @@ users:
       year: 2025
       month: 5
     left_at: null
-    tag: 
+    tags: 
       - 1st Party
-    source:
+    sources:
       - https://blog.github.com/jp/all.atom
   - name: Swift.org
     joined_at:
       year: 2025
       month: 5
-    tag:
+    tags:
       - 1st Party
-    source:
+    sources:
       - https://swift.org/atom.xml
   - name: hackingwithswift
     joined_at:
       year: 2025
       month: 5
     left_at: null
-    tag:
+    tags:
       - Individual
-    source:
+    sources:
       - https://www.hackingwithswift.com/articles/rss
       
