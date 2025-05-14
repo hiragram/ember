@@ -37,3 +37,67 @@ users:
       - 1st Party
     sources:
       - https://blog.google/products/gemini/rss/
+  - name: Hatena
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tags:
+      - News
+    sources:
+      - https://b.hatena.ne.jp/hotentry/it.rss
+  - name: Apple
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tags:
+      - 1st Party
+    sources:
+      - https://www.apple.com/jp/newsroom/rss-feed.rss
+  - name: songmu
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tag:
+      - Individual
+    sources:
+      - http://www.songmu.jp/riji/atom.xml
+  - name: konifar
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tag:
+      - Individual
+    sources:
+      - http://konifar-zatsu.hatenadiary.jp/rss
+      - https://konifar.hatenablog.com/rss
+  - name: GitHub
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tag: 
+      - 1st Party
+    source:
+      - https://blog.github.com/jp/all.atom
+  - name: Swift.org
+    joined_at:
+      year: 2025
+      month: 5
+    tag:
+      - 1st Party
+    source:
+      - https://swift.org/atom.xml
+  - name: hackingwithswift
+    joined_at:
+      year: 2025
+      month: 5
+    left_at: null
+    tag:
+      - Individual
+    source:
+      - https://www.hackingwithswift.com/articles/rss
+      
